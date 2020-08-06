@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<module>
+	<name>prestashop_test_example</name>
+	<displayName><![CDATA[example testing module]]></displayName>
+	<version><![CDATA[0.0.1]]></version>
+	<description><![CDATA[example js test in module]]></description>
+	<author><![CDATA[PrestaShop]]></author>
+	<tab><![CDATA[others]]></tab>
+	<is_configurable>1</is_configurable>
+	<need_instance>1</need_instance>
+</module>

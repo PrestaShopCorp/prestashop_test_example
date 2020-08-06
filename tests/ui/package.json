@@ -1,0 +1,21 @@
+{
+  "name": "ui-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.js",
+  "scripts": {
+    "hack_lib": "yarn --cwd ./node_modules/prestashop_test_lib",
+    "start:test:ui": "yarn hack_lib && ./node_modules/mocha/bin/mocha --recursive --file ./node_modules/prestashop_test_lib/kernel/utils/setup.js features/*",
+    "start:test:ui-lib": "yarn hack_lib && ./node_modules/mocha/bin/mocha --recursive --file ./node_modules/prestashop_test_lib/kernel/utils/setup.js ./node_modules/prestashop_test_lib/tests/ui/*",
+    "start:test": "yarn start:test:ui && yarn start:test:ui-lib"
+  },
+  "author": "PrestaShop",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-string": "^1.5.0",
+    "mocha": "^6.1.4",
+    "mochawesome": "^2.3.0",
+    "prestashop_test_lib": "^0.0.5"
+  }
+}

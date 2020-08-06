@@ -1,0 +1,29 @@
+version: "3"
+
+services:
+  ps_web:
+    image: prestashop/prestashop:${PS_VERSION}
+    container_name: ps_web
+    env_file: .env
+    healthcheck:
+        test: ["CMD", "curl", "-f", "http://localhost"]
+        interval: 30s
+        timeout: 10s
+        retries: 5
+    volumes:
+      - .docker/install_module.sh:/tmp/init-scripts/install_module.sh
+      - .:/var/www/html/modules/prestashop_test_example
+    ports:
+      - 80:80
+    networks:
+      - ps-net
+
+  ps_db:
+    image: mysql:5.7
+    container_name: ps_db
+    env_file: .env
+    networks:
+      - ps-net
+
+networks:
+  ps-net:
