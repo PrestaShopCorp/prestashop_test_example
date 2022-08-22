@@ -4,7 +4,7 @@
 
 ```bash
 yarn
-docker-composer up -d
+docker-compose up -d
 ```
 
 ## Usage
